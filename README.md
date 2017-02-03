@@ -95,6 +95,10 @@ The following config settings are searched for in the Flask application's config
 
 ## Changelog
 
+#### 0.2.1
+
+* Added JIRA_VERIFY option
+
 #### 0.2.0
 
 * Added JIRA_IGNORE_INITIAL_CONNECTION_FAILURE option.

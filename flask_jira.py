@@ -12,7 +12,7 @@ from requests import ConnectionError
 
 __author__ = '@Robpol86'
 __license__ = 'MIT'
-__version__ = '0.2.0'
+__version__ = '0.2.1'
 LOG = logging.getLogger(__name__)
 
 
@@ -35,11 +35,11 @@ def read_config(config, prefix):
     Dictionary with parsed data, compatible with jira.client.JIRA.__init__() keyword arguments.
     """
     # Get all relevant config values from Flask application.
-    suffixes = ('SERVER', 'USER', 'PASSWORD', 'TOKEN', 'SECRET', 'CONSUMER', 'CERT')
-    config_server, config_user, config_password, config_token, config_secret, config_consumer, config_cert = [
+    suffixes = ('SERVER', 'USER', 'PASSWORD', 'TOKEN', 'SECRET', 'CONSUMER', 'CERT', 'VERIFY')
+    config_server, config_user, config_password, config_token, config_secret, config_consumer, config_cert, config_verify = [
         config.get('{0}_{1}'.format(prefix, suffix)) for suffix in suffixes
     ]
-    result = dict(options=dict(server=config_server))
+    result = dict(options=dict(server=config_server, verify=config_verify))
     # Gather authentication data.
     basic = (config_user, config_password)
     oauth = dict(
