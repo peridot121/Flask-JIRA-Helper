@@ -91,6 +91,7 @@ The following config settings are searched for in the Flask application's config
 * `JIRA_SECRET` -- OAuth authentication access token secret.
 * `JIRA_CONSUMER` -- OAuth authentication consumer key.
 * `JIRA_CERT` -- OAuth authentication key certificate data.
+* `JIRA_VERIFY` -- Add cert to verify
 * `JIRA_IGNORE_INITIAL_CONNECTION_FAILURE` -- Ignore ConnectionError during init_app() for testing/development.
 
 ## Changelog
